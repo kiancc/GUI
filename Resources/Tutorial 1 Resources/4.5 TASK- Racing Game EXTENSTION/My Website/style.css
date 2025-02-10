@@ -1,0 +1,36 @@
+#leftDiv{
+    background-color:  turquoise;
+    width: 150px;
+    height: 100px;
+    margin: 5px; /* Spacing around the box */
+    padding: 5px; /* Spacing within the box*/
+
+    position: absolute;
+    left: 0px;
+    
+}
+
+#rightDiv{
+    background-color: hotpink;
+    width: 150;
+    height: 100px;
+    margin: 5px; 
+    padding: 5px;
+    position: absolute;
+    left: 0px;
+    top: 150px;
+}
+
+
+#finishLine{
+    width: 180px;
+    height: 320px;
+    position: absolute;
+    left: 800px;
+    top: 0px;
+}
+
+
+
+
+

@@ -1,0 +1,27 @@
+#leftDiv{
+    background-color:  turquoise;
+    width: 100px;
+    height: 100px;
+    margin: 5px; /* Spacing around the box */
+    padding: 5px; /* Spacing within the box*/
+
+    position:absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#rightDiv{
+    background-color: hotpink;
+    width: 100px;
+    height: 100px;
+    height: 100px;
+    margin: 5px; 
+    padding: 5px;
+
+    position:absolute;
+    top: 100px;
+    left: 100px;
+}
+
+
+/** Adjusting the top and left, in both Divs here, gives the exercise solutions. **/

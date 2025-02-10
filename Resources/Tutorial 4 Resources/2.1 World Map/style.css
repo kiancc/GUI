@@ -1,0 +1,19 @@
+#map{
+    width: 1440px;
+    height: 1024px;
+    background: linear-gradient(0deg, rgba(53, 164, 226, 0.20) 0%, rgba(53, 164, 226, 0.20) 100%),
+                                 url(assets/worldmap.png) lightgray 50% / contain no-repeat;
+}
+
+#pin{
+
+}
+
+#usa{
+
+}
+
+#china{
+
+}
+
