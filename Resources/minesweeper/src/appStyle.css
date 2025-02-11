@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    /* padding-bottom: 5em; */
+    /* padding-top: 2em; */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: 'Inter', sans-serif; /* Apply Inter font */
+    /* font-size: 2em; */
+}

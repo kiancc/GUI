@@ -1,0 +1,7 @@
+.timer-container {
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 2em;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif; /* Apply Inter font */
+}
