@@ -1,0 +1,43 @@
+/*Insert CSS code here*/
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.square{
+    background: white;
+    border: 1px solid #999;
+    float: left; 
+    font-size: 24px; 
+    font-weight: bold;
+    line-height: 34px; 
+    margin-right: -1px; 
+    margin-top: -1px; 
+    padding: 1em;
+    margin: 2px; 
+    text-align: center; 
+    width: 34px; 
+}
+
+.submit{
+    
+    background: white;
+    border: 1px solid #999;
+    float: left; 
+    font-size: 24px; 
+    font-weight: bold;
+    line-height: 34px; 
+    margin-right: -1px; 
+    margin-top: -1px; 
+    padding: 1em;
+    margin: 2px; 
+    text-align: center; 
+    border-radius: 0.2em;
+}
+
+.board-row:after{
+    clear:both;
+    content: '';
+    display: table;
+}
