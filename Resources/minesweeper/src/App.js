@@ -1,6 +1,6 @@
 // import {useState} from 'react';
 import React from 'react';
-import Board from './components/minefield/Board';
+import Game from './components/Game';
 import './appStyle.css';
 
 function App() {
@@ -9,9 +9,9 @@ function App() {
     <>
       <div>
         <header>
-          <h1>Minesweeper!</h1>
+          <h1>Eggsweeper!</h1>
         </header>
-        <Board />
+        <Game />
 
       </div>
     </>

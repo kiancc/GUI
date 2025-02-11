@@ -1,0 +1,17 @@
+/* .control-panel {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box; 
+  }
+  
+  .control-panel > * {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .control-panel > *:not(:last-child) {
+    margin-right: 10px; 
+  } */

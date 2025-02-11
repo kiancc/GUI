@@ -1,15 +1,13 @@
 import React from 'react';
 import './reset.css';
 
-function Reset({value, onSquareClicked}){
+function Reset({ onReset }) {
 
   return (
-    <>
-        <button className='reset-button'>
-            Reset
-        </button>
-    </>
-  )
+    <button className='reset-button' onClick={onReset}>
+      Reset
+    </button>
+  );
 }
 
 export default Reset;

@@ -3,9 +3,12 @@ import React from 'react';
 function Square({value, onSquareClicked}){
   let myValue;
   if(value === null){
-    myValue = '🌾';
+    const myValues = ['🌿'] //['🌻', '🌿'] 
+    let icon = Math.floor(Math.random() * myValues.length);
+    myValue = myValues[icon]
+    // myValue = '🌾';
   }else if (value === 'X'){
-    myValue = '❌';
+    myValue = '🍳';
   }else{
     myValue = value;
   }

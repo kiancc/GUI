@@ -1,86 +1,23 @@
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
 import './style.css';
 import Square from './Square';
-import Timer from '../gamestate/Timer';
-import Reset from '../gamestate/Reset';
 
+function Board({ isActive, setIsActive, board, squares, setSquares, flag, gameOver, setGameOver, handleGameReset }) {
 
-// initialises board
-// -----------------
-let board = Array();
+  function handleClick(i) {
+    if (gameOver) return;
 
-for (let i = 0; i < 8; i++) {
-    const row = Array();
-    for (let j = 0; j < 8; j++) {
-        row.push(null);
-    }
-    board.push(row);
-}
-// console.log(board);
-// -----------------
-
-// adds random mines
-// -----------------
-const num_mines = 10;
-for (let i = 0; i < num_mines; i++) {
-    let m = Math.floor(Math.random() * 8);
-    let n = Math.floor(Math.random() * 8);
-    while (board[m][n] != null) {
-      m = Math.floor(Math.random() * 8);
-      n = Math.floor(Math.random() * 8);
-    }
-    board[m][n] = "X";
-}
-console.log(board);
-// -----------------
-
-// populates num adj mines in squares
-// -----------------
-for (let i = 0; i < 8; i++) {
-  for (let j = 0; j < 8; j++) {
-    let num_mines = 0;
-    if (board[i][j] != "X") {
-      const adj_pos = [[-1,-1], [-1,0], [-1,1], [0,-1], [0,1], [1,-1], [1,0], [1,1]];
-      for (let n = 0; n < adj_pos.length; n++) {
-        const idx = adj_pos[n][0] + i;
-        const jdx = adj_pos[n][1] + j;
-        // if the surrounding indicies are in bounds count number of mines;
-        if ((0 <= idx && idx < 8) && (0 <= jdx && jdx < 8)) {
-          if (board[idx][jdx] === "X") {
-            num_mines++;
-          }
-          
-        }
+    if (!isActive) {
+        setIsActive(true);
       }
-      board[i][j] = num_mines;
-    }
-  }
-}
-// console.log(board);
-// -----------------
-
-function Board() {
-
-  const [squares, setSquares] = useState(Array(64).fill(null));
-  const [isActive, setIsActive] = useState(false);
-
-  // const handleStart = () => {
-  //   setIsActive(true);
-  // };
-
-  const handleReset = () => {
-    setIsActive(false);
-  }
-
-  function handleClick(i){
-    if (isActive === false) {
-      setIsActive(true);
-    }
     let nextSquares = squares.slice();
     let r = Math.floor(i / 8);
     let c = i % 8;
 
-    if (board[r][c] == "0") {
+    if (flag === true) {
+        nextSquares[i] = '🥚';
+    }
+    else if (board[r][c] == "0") {
       // do a dfs and clear adjacent zeros
       nextSquares[i] = board[r][c];
       let stack = [[r, c]];
@@ -104,11 +41,11 @@ function Board() {
       }
     }
     else if (board[r][c] != "X") {
-      // if the square isn't a mine, show surrounding tiles
       nextSquares[i] = board[r][c];
     }
     else{
       nextSquares[i] = "X";
+      setGameOver();
     }
     setSquares(nextSquares);
   }
@@ -196,12 +133,6 @@ function Board() {
       <Square value={squares[62]} onSquareClicked={() => handleClick(62)}/>
       <Square value={squares[63]} onSquareClicked={() => handleClick(63)}/>
     </div>
-
-    <div className='control-panel'>
-      <Reset />
-      <Timer isActive={isActive} onReset={handleReset}/>
-    </div>
-
     </>
   );
 }
